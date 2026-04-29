@@ -1,0 +1,412 @@
+body {
+  background-color: #008080;
+  font-family: "Courier New", monospace;
+  font-size: 16px;
+  margin: 0;
+}
+
+/* main window */
+.window {
+  width: 800px;
+  margin: 40px auto;
+  background: #c0c0c0;
+
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #404040;
+  border-bottom: 2px solid #404040;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  background: #000080;
+  color: white;
+}
+
+/* title bar */
+.titlebar {
+  background: #000080;
+  color: white;
+  padding: 4px 6px;
+  font-weight: bold;
+  font-size: 14px;
+  user-select: none;
+  cursor: grab;
+}
+
+.titlebar span {
+  display: inline-block;
+}
+
+.titlebar:active {
+  cursor: grabbing;
+}
+
+/* layout */
+.content {
+  display: flex;
+}
+
+/* sidebar */
+.sidebar {
+  font-size: 16px;
+  line-height: 1.4;
+  width: 180px;
+  border-right: 2px solid black;
+  padding: 10px;
+  background: #c0c0c0;
+}
+
+.sidebar a {
+  display: block;
+  color: black;
+  text-decoration: none;
+  margin: 4px 0;
+}
+
+.sidebar a:hover {
+  background: #000080;
+  color: white;
+}
+
+.sidebar p {
+  margin-top: 0;
+}
+
+/* main content */
+.main {
+  flex: 1;
+  padding: 10px;
+  background: #c0c0c0;
+}
+
+.main h1, .main h2 {
+  margin-top: 0;
+}
+
+.panel {
+  padding: 10px;
+  background: #c0c0c0;
+  margin-bottom: 10px;
+  border-top: 2px solid #404040;
+  border-left: 2px solid #404040;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+}
+
+.button {
+  display: inline-block;
+  padding: 4px 10px;
+  margin: 2px 0;
+  margin-right: 6px;
+  background: #c0c0c0;
+  color: black;
+  text-decoration: none;
+
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #404040;
+  border-bottom: 2px solid #404040;
+
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+}
+
+.button:hover {
+  background: #d4d0c8;
+}
+
+.button:active {
+  border-top: 2px solid #404040;
+  border-left: 2px solid #404040;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+}
+
+.button.disabled {
+  color: #808080;
+  pointer-events: none;
+}
+
+/* collapsible menu */
+.nav-section ul {
+  display: none;
+}
+
+input:checked + ul {
+  display: block;
+}
+
+/* hide checkboxes */
+.nav-section input {
+  display: none;
+}
+
+/* collapsed by default */
+.nav-section ul {
+  display: none;
+  padding-left: 10px;
+  margin: 2px 0;
+}
+
+.nav-section ul li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  line-height: 1.2;
+}
+
+/* labels (clickable headers) */
+.nav-section label {
+  display: block;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+/* links */
+.nav-section a {
+  color: black;
+  text-decoration: none;
+}
+
+.nav-section a.active {
+  background: #000080;
+  color: white;
+}
+
+/* expand when checked */
+.nav-section input:checked + label + ul {
+  display: block;
+}
+
+.nav-section label::before {
+  content: "+ ";
+}
+
+.nav-section input:checked + label::before {
+  content: "- ";
+}
+
+.nav-section a:hover {
+  background: #000080;
+  color: white;
+}
+
+.nav-section a.active {
+  background: #000080;
+  color: white;
+  padding: 2px 4px;
+}
+
+.nav-section a.active::before {
+  content: "> ";
+}
+
+.nav-section a.active:hover {
+  background: #000080;
+  color: white;
+}
+
+.tree {
+  display: inline-block;
+  width: 20px;
+}
+
+.file.exe a::after {
+  content: " [exe]";
+  color: #555;
+}
+
+.file.txt a::after {
+  content: " [txt]";
+  color: #555;
+}
+
+.file.active {
+  background: #000080;
+  color: white;
+}
+
+.explorer {
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.file {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.file a {
+  text-decoration: none;
+  color: black;
+}
+
+.file a:hover {
+  background: #000080;
+  color: white;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.thumb {
+  width: 120px;
+  height: 140px; /* fixed total height */
+  padding: 6px;
+  background: #c0c0c0;
+
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #404040;
+  border-bottom: 2px solid #404040;
+
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.thumb .icon {
+  align-self: flex-start;
+  margin-bottom: 4px;
+}
+
+.thumb .preview {
+  width: 100%;
+  height: 80px; /* fixed preview area */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.thumb .preview img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.thumb img {
+  width: 100%;
+  height: auto;
+  display: block;
+  cursor: pointer;
+}
+
+.thumb.selected {
+  background: #000080;
+  color: white;
+}
+
+.preview {
+  background: #000;
+  width: 100%;
+  height: 80px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.preview img {
+  image-rendering: pixelated;
+  cursor: default;
+}
+
+.preview img:hover {
+  background: #000080;
+}
+
+.caption {
+  font-size: 12px;
+  margin-top: 4px;
+  text-align: center;
+  
+  overflow-wrap: break-word;
+}
+
+.icon {
+  width: 16px !important;
+  height: 16px !important;
+  image-rendering: pixelated;
+}
+
+.file {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tree {
+  display: inline-block;
+  width: 20px;
+}
+
+/* overlay */
+.viewer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+}
+
+.hidden {
+  display: none;
+}
+
+/* window */
+.viewer-window {
+  position: absolute;
+  width: 500px;
+
+  background: #c0c0c0;
+
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #404040;
+  border-bottom: 2px solid #404040;
+}
+
+
+/* close button */
+.close-btn {
+  float: right;
+  background: #c0c0c0;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* image area */
+.viewer-content {
+  padding: 10px;
+  text-align: center;
+}
+
+.viewer-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.close-btn {
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #404040;
+  border-bottom: 2px solid #404040;
+  padding: 2px 6px;
+}

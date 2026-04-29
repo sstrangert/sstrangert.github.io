@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Stina's Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="icons/sissela.png">
+</head>
+
+<body>
+
+<div class="window">
+
+  <div class="titlebar">
+    <span>stina.exe</span>
+  </div>
+
+  <div class="content">
+
+  <div id="sidebar-container"></div>
+
+    <div class="main">
+
+      <div class="panel">
+
+      <h2>3d/</h2>
+        <div class="file">
+          <span class="tree">└─</span>
+          <a href="art.html">../</a>
+        </div>
+      <p>collection of 3d work</p>
+
+        <div class="gallery">
+
+          <!-- ITEM -->
+          <div class="thumb" onclick="selectThumb(this)">
+            <img src="icons/image.png" class="icon">
+            <div class="preview">
+            <img 
+              src="images/BloodOceanSebV2.gif"
+              ondblclick="openViewer('images/BloodOceanSebV2.gif', 'robot_model.bmp')"
+              onclick="handleTap(this, 'images/BloodOceanSebV2.gif', 'robot_model.bmp')"
+            >
+            </div>
+            <div class="caption">object_and_water_test.blend</div>
+          </div>
+
+          <div class="thumb" onclick="selectThumb(this)">
+            <img src="icons/image.png" class="icon">
+            <div class="preview">
+            <img 
+              src="images/sebshowcase.gif"
+              ondblclick="openViewer('images/sebshowcase.gif', 'robot_model.bmp')"
+              onclick="handleTap(this, 'images/sebshowcase.gif', 'robot_model.bmp')"
+            >
+            </div>
+            <div class="caption">old_friend.obj</div>
+          </div>
+
+          <div class="thumb" onclick="selectThumb(this)">
+            <img src="icons/image.png" class="icon">
+            <div class="preview">
+            <img 
+              src="images/serverroom.png"
+              ondblclick="openViewer('images/serverroom.png', 'robot_model.bmp')"
+              onclick="handleTap(this, 'images/serverroom.png', 'robot_model.bmp')"
+            >
+            </div>
+            <div class="caption">server_room.render</div>
+          </div>
+
+          <div class="thumb" onclick="selectThumb(this)">
+            <img src="icons/image.png" class="icon">
+            <div class="preview">
+            <img 
+              src="images/wizard.gif"
+              ondblclick="openViewer('images/wizard.gif', 'robot_model.bmp')"
+              onclick="handleTap(this, 'images/wizard.gif', 'robot_model.bmp')"
+            >
+            </div>
+            <div class="caption">wizard_model.obj</div>
+          </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+<div id="viewer" class="viewer hidden">
+
+  <div class="viewer-window" id="viewer-window">
+
+    <div class="titlebar">
+      <span id="viewer-title">image.bmp</span>
+      <button class="close-btn" onclick="closeViewer()">X</button>
+    </div>
+
+    <div class="viewer-content">
+      <img id="viewer-img" src="">
+    </div>
+
+  </div>
+
+</div>
+<script src="scripts/main.js" defer></script>
+</body>
+</html>

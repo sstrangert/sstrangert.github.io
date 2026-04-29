@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Stina's Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="icons/sissela.png">
+</head>
+
+<body>
+
+<div class="window">
+
+  <div class="titlebar">
+    <span>stina.exe</span>
+  </div>
+
+  <div class="content">
+
+  <div id="sidebar-container"></div>
+
+    <div class="main">
+
+      <div class="panel">
+
+      <h2>2d/</h2>
+        <div class="file">
+          <span class="tree">└─</span>
+          <a href="art.html">../</a>
+        </div>
+      <p>collection of 2d work</p>
+
+        <div class="gallery">
+
+          <!-- ITEM -->
+          <div class="thumb" onclick="selectThumb(this)">
+            <img src="icons/image.png" class="icon">
+            <div class="preview">
+            <img 
+              src="images/assignment.png"
+              ondblclick="openViewer('images/assignment.png', 'robot_model.bmp')"
+              onclick="handleTap(this, 'images/assignment.png', 'robot_model.bmp')"
+            >
+            </div>
+            <div class="caption">school_assignment.jpg</div>
+          </div>
+
+          <div class="thumb" onclick="selectThumb(this)">
+            <img src="icons/image.png" class="icon">
+            <div class="preview">
+            <img 
+              src="images/koncept.jpg"
+              ondblclick="openViewer('images/koncept.jpg', 'robot_model.bmp')"
+              onclick="handleTap(this, 'images/koncept.jpg', 'robot_model.bmp')"
+            >
+            </div>
+            <div class="caption">photobash.png</div>
+          </div>
+
+          <div class="thumb" onclick="selectThumb(this)">
+            <img src="icons/image.png" class="icon">
+            <div class="preview">
+            <img 
+              src="images/övning.png"
+              ondblclick="openViewer('images/övning.png', 'robot_model.bmp')"
+              onclick="handleTap(this, 'images/övning.png', 'robot_model.bmp')"
+            >
+            </div>
+            <div class="caption">school_assignment.jpg</div>
+          </div>
+
+          <div class="thumb" onclick="selectThumb(this)">
+            <img src="icons/image.png" class="icon">
+            <div class="preview">
+            <img 
+              src="images/model-sheet.jpg"
+              ondblclick="openViewer('images/model-sheet.jpg', 'robot_model.bmp')"
+              onclick="handleTap(this, 'images/model-sheet.jpg', 'robot_model.bmp')"
+            >
+            </div>
+            <div class="caption">character_design_sheet.png</div>
+          </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+<div id="viewer" class="viewer hidden">
+
+  <div class="viewer-window" id="viewer-window">
+
+    <div class="titlebar">
+      <span id="viewer-title">image.bmp</span>
+      <button class="close-btn" onclick="closeViewer()">X</button>
+    </div>
+
+    <div class="viewer-content">
+      <img id="viewer-img" src="">
+    </div>
+
+  </div>
+
+</div>
+<script src="scripts/main.js" defer></script>
+</body>
+</html>
